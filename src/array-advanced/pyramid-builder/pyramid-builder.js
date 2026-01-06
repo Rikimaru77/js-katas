@@ -19,6 +19,26 @@ If `n` is null or not a number, throw a TypeError.
 
 // TODO add your code here
 
+function build(number) {
+  if (typeof(number) !== "number") {
+    throw new TypeError;
+  }
+  
+  else if (number < 1) {
+    throw new RangeError;
+  }
+
+  let arr = [];
+
+  for (let i = 0; i <= (number - 1) ; i++) {
+    const n = ((number - 1)-i);
+    const spaces= " ".repeat(n);
+    const asterix = "**".repeat(i);
+    arr[i] =`${spaces}*${asterix}${spaces}`;
+  }
+  return (arr);
+}
+
 // Begin of tests
 const assert = require("assert");
 
