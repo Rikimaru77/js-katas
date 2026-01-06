@@ -9,6 +9,16 @@ Note: If the number is a multiple of both 3 and 5, only count it once.
 
 // TODO add your code here
 
+function sum(number1) {
+    let x = 0;
+    for (let i = 0; i < number1; i++) {
+    if (i % 3 == 0 || i % 5 ==0) {
+        x = x + i;
+    }
+    }
+    return(x);
+}
+
 // Begin of tests
 const assert = require("assert");
 
