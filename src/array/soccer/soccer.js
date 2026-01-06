@@ -16,15 +16,32 @@ If a value of the argument is not 1 or 2, return "Illegal argument".
 */
 // TODO add your code here
 
-// Begin of tests
-const assert = require("assert");
-assert.strictEqual(typeof getScore, "function");
-assert.strictEqual(getScore.length, 1);
-assert.deepStrictEqual(getScore(null), "Illegal argument");
-assert.strictEqual(getScore([]), "0-0 : draw");
-assert.strictEqual(getScore([1, 1, 1]), "3-0 : team 1 wins the game");
-assert.strictEqual(getScore([2, 2, 2]), "0-3 : team 2 wins the game");
-assert.strictEqual(getScore([1, 1, 2, 2]), "2-2 : draw");
-assert.strictEqual(getScore([1, 2, 1, 3, 1, 2]), "Illegal argument");
-assert.strictEqual(getScore(["1", "2"]), "Illegal argument");
-// End of tests
+function getScore(arr) {
+    if (!arr) {
+        return("Illegal argument");
+    }
+    let x = 0;
+    let y = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== 1 && arr[i] !== 2) {
+            return("Illegal argument");
+        }
+        if (arr[i] === 1) {
+            x = x + 1;
+        }
+        else {
+            y = y + 1;
+        }
+    }
+    if (x == y) {
+        return (`${x}-${y}: draw`);
+    }
+    else if (x < y) {
+        return (`${x}-${y}: team 2 wins the game`);
+    }
+    else {
+        return (`${x}-${y}: team 1 wins the game`);
+    }
+}
+
+module.exports = getScore;

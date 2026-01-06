@@ -16,4 +16,15 @@ Don't mutate the parameter.
 
 // TODO add your code here
 
+function inverse(arr) {
+    if (!arr || arr.length === null) {
+        return([]);
+    }
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+        result[i] = (arr[i] * -1);
+    }
+    return(result)
+}
+
 module.exports = inverse;
