@@ -8,10 +8,26 @@ Example:
 * "Cobie Smulders" -> "C.S"
 * "Neil Patrick Harris" -> "N.P.H"
 
-Add you own tests.
+Add your own tests.
 
 */
 
 // TODO add your code here
+
+function abbreviate(string) {
+    
+    if(!string) {
+        return (null);
+    }
+
+    let abbreviateName = string[0].toUpperCase();
+
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === " ") {
+            abbreviateName += ("." + string[i + 1].toUpperCase());
+        }
+    }
+    return (abbreviateName);
+}
 
 module.exports = abbreviate;
