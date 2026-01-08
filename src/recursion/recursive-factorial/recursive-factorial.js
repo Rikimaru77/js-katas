@@ -15,6 +15,10 @@ Add you own tests.
 
 // TODO add your code here
 
+function facto(n) {
+    return n === 0 ?  1 : n * facto(n - 1);
+  }
+
 // Begin of tests
 const assert = require("assert");
 
@@ -36,5 +40,10 @@ assert.strictEqual(
   "facto must be recursive"
 );
 // TODO add your tests:
+
+assert.strictEqual(facto(0), 1);
+assert.strictEqual(facto(3), 6);
+assert.strictEqual(facto(6), 720);
+assert.strictEqual(facto(5), 120);
 
 // End of tests

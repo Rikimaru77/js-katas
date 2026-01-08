@@ -22,6 +22,10 @@ Add you own tests.
 
 // TODO add your code here
 
+function fibo(n) {
+    return n === 0 ?  0 : n === 1 ? 1 : fibo(n - 1) + fibo(n - 2);
+  }
+
 // Begin of tests
 const assert = require("assert");
 
@@ -39,5 +43,13 @@ assert.strictEqual(
   "fibo must be recursive"
 );
 // TODO add your tests:
+
+assert.strictEqual(fibo(0), 0);
+assert.strictEqual(fibo(1), 1);
+assert.strictEqual(fibo(2), 1);
+assert.strictEqual(fibo(3), 2);
+assert.strictEqual(fibo(4), 3);
+assert.strictEqual(fibo(5), 5);
+assert.strictEqual(fibo(12), 144);
 
 // End of tests

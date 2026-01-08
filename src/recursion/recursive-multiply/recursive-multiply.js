@@ -9,6 +9,11 @@ This function must be recursive: you can't use a loop.
 
 // TODO add your code here
 
+function multiply(n, y) {
+    return y === 0 ? 0 : y < 0 ? (y = -y, n = -n) : n + multiply(n, y - 1);
+  }
+
+
 // Begin of tests
 const assert = require("assert");
 
